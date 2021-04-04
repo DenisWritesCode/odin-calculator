@@ -1,3 +1,112 @@
 /* Style the calc here */
 
 /* Target is to reproduce the iOS layout */
+
+input[value="AC"] {
+  grid-area: AC;
+}
+input#negate {
+  grid-area: negate;
+  background-color: red;
+}
+input[value="%"] {
+  grid-area: percent;
+  background-color: red;
+}
+input[value="9"] {
+  grid-area: 9;
+}
+input[value="8"] {
+  grid-area: 8;
+}
+input[value="7"] {
+  grid-area: 7;
+}
+input[value="6"] {
+  grid-area: 6;
+}
+input[value="5"] {
+  grid-area: 5;
+}
+input[value="4"] {
+  grid-area: 4;
+}
+input[value="3"] {
+  grid-area: 3;
+}
+input[value="2"] {
+  grid-area: 2;
+}
+input[value="1"] {
+  grid-area: 1;
+}
+input[value="0"] {
+  grid-area: 0;
+}
+input#decimal {
+  grid-area: decimal;
+}
+input[value="/"] {
+  grid-area: divide;
+}
+input[value="x"] {
+  grid-area: multiply;
+}
+input[value="-"] {
+  grid-area: subtract;
+}
+input[value="+"] {
+  grid-area: add;
+}
+input[value="="] {
+  grid-area: equal;
+}
+
+input {
+  display: block;
+}
+textarea#output {
+  grid-area: result;
+}
+.function {
+  grid-area: function;
+  display: flex;
+  justify-content: space-around;
+}
+.numbers {
+  grid-area: numbers;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.numbers input {
+  background-color: green;
+  width: 33%;
+}
+
+.numbers input[value="0"] {
+  width: 66%;
+}
+.calc {
+  grid-area: calc;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.calculator {
+  min-height: 500px;
+  width: 60%;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-areas:
+    "result   result   result   result"
+    "function function function calc"
+    "numbers  numbers  numbers  calc"
+    "numbers  numbers  numbers  calc"
+    "numbers  numbers  numbers  calc"
+    "numbers  numbers  numbers  calc";
+}
