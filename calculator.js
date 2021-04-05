@@ -34,3 +34,60 @@ const operate = (num1, num2, operator) => {
     default:
   }
 };
+
+// Select all buttons. Convert them to an Array from nodelist.
+const buttons = Array.from(document.querySelectorAll("input"));
+const textArea = document.querySelector("#output");
+
+// Add eventlistener to each button.
+buttons.map((button) => {
+  button.addEventListener("click", (e) => {
+    calculate(e.target.value);
+  });
+});
+
+// Store numbers.
+let workingValue = 0;
+// function to run the show.
+const calculate = (buttonPressed) => {
+  // Check if it is a number.
+  if (!isNaN(Number(buttonPressed))) {
+    // Compare to NaN. If true, not a number.
+    console.log("Number: ", buttonPressed);
+    workingValue += buttonPressed; // Updates textArea but only to current digit. May have to move this portion later. Bug of original value.
+    textArea.value = workingValue;
+  }
+  // If number, update text area. => Above.
+  // if operator( = is part of operator ), update currentValue. Differentiate
+  // between first value and second.
+  // If %, divide currentValue by 100.
+  // If (+/-), negate current number.
+  else if (
+    buttonPressed === "+" ||
+    buttonPressed === "-" ||
+    buttonPressed === "x" ||
+    buttonPressed === "/" ||
+    buttonPressed === "=" ||
+    buttonPressed === "%" ||
+    buttonPressed === "+/-"
+  ) {
+    console.log(buttonPressed);
+  }
+  // If . work on currentValue.
+  else if (buttonPressed === ".") {
+    console.log("Add .");
+    workingValue += buttonPressed;
+    textArea.value = workingValue;
+  }
+  // If AC, reset EVERYTHING.
+  else if (buttonPressed === "AC") {
+    console.log("AC -> It's rewind time boys");
+    workingValue = 0;
+    textArea.value = workingValue;
+  } else {
+    console.log("Weuh");
+  } //
+};
+
+// Function to update textArea.
+// Function to keep track of currentValue.

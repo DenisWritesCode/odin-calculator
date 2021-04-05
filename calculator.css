@@ -1,7 +1,10 @@
 /* Style the calc here */
 
 /* Target is to reproduce the iOS layout */
-
+main {
+  padding: 10px;
+  border: red solid 2px;
+}
 input[value="AC"] {
   grid-area: AC;
 }
@@ -77,11 +80,13 @@ textarea#output {
   grid-area: numbers;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .numbers input {
   background-color: green;
-  width: 33%;
+  width: 30%;
+  margin-bottom: 5px;
 }
 
 .numbers input[value="0"] {
@@ -95,13 +100,15 @@ textarea#output {
 }
 
 .calculator {
-  min-height: 500px;
+  border: 2px blue dashed;
+  height: 500px;
   width: 60%;
-  margin: 0 auto;
+  margin: 20px auto;
 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(6, 1fr);
+  grid-gap: 2%;
   grid-template-areas:
     "result   result   result   result"
     "function function function calc"
