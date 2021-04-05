@@ -68,8 +68,11 @@ input[value="="] {
 input {
   display: block;
 }
-textarea#output {
-  grid-area: result;
+.history {
+  grid-area: history;
+}
+.input {
+  grid-area: current;
 }
 .function {
   grid-area: function;
@@ -107,10 +110,11 @@ textarea#output {
 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: repeat(7, 1fr);
   grid-gap: 2%;
   grid-template-areas:
-    "result   result   result   result"
+    "history  history  history  history"
+    "current  current  current  current"
     "function function function calc"
     "numbers  numbers  numbers  calc"
     "numbers  numbers  numbers  calc"
