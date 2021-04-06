@@ -5,13 +5,15 @@ const input = document.querySelector(".input");
 
 let num1 = null,
   num2 = null,
-  oper;
+  oper = null;
 
 // Add eventlistener to each button.
 buttons.map((button) => {
   button.addEventListener("click", (e) => {
     if (e.target.id === "divide") {
       handleButtons("/");
+    } else if (e.target.id === "negate") {
+      input.innerText = -Number(input.innerText);
     } else handleButtons(e.target.value);
   });
 });
@@ -39,7 +41,9 @@ const handleButtons = (buttonValue) => {
     buttonValue === "+/-"
   ) {
     if (buttonValue === "x") handleOperator("*");
-    else handleOperator(buttonValue);
+    else if (buttonValue === "%") {
+      input.innerText = Number(input.innerText) / 100;
+    } else handleOperator(buttonValue);
   }
   // If AC, reset EVERYTHING.
   else if (buttonValue === "AC") {
@@ -108,15 +112,17 @@ const handleOperator = (operator) => {
       //num1 has a value already.
       num2 = Number(input.innerText);
       let ans = operate(num1, num2, oper);
-      input.innerText = 0;
+      input.innerText = ans;
       history.innerText = ans;
       num1 = 0;
       num2 = 0;
+    } else {
+      history.innerText = num1;
     }
   } else {
     // Every other operator
     num1 = Number(input.innerText);
-    input.innerText = 0;
+    input.innerText = `${num1} ${operator}`;
     oper = operator;
   }
 };
@@ -127,5 +133,11 @@ const updateText = (value) => {
 };
 
 // When AC(All Clear) is pressed.
-const resetEverything = () => {};
+const resetEverything = () => {
+  input.innerText = "-";
+  history.innerText = "-";
+  num1 = 0;
+  num2 = 0;
+  oper = "";
+};
 // Function to keep track of currentValue.
