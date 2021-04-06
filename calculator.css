@@ -108,7 +108,7 @@ input {
   height: 500px;
   padding: 10px;
   border-radius: 5px;
-  width: 25%;
+  width: 25%; /* Adjusting for big screens */
   margin: 20px auto;
 
   display: grid;
