@@ -115,12 +115,15 @@ const handleOperator = (operator) => {
   if (operator === "=") {
     if (Number(num1)) {
       //num1 has a value already.
-      num2 = Number(input.innerText);
-      let ans = operate(num1, num2, oper);
-      input.innerText = ans;
-      history.innerText = ans;
-      num1 = ans;
-      num2 = 0;
+      if (Number(num2 === 0)) {
+      } else {
+        num2 = Number(input.innerText);
+        let ans = operate(num1, num2, oper);
+        input.innerText = ans;
+        history.innerText = ans;
+        num1 = ans;
+        num2 = 0;
+      }
     } else {
       history.innerText = num1;
     }
@@ -137,6 +140,7 @@ const handleOperator = (operator) => {
       num1 = ans;
       num2 = 0;
       console.log("fix me");
+      console.table(num1, oper, num2, input.innerText, ans);
     } else {
       num1 = Number(input.innerText);
       input.innerText = `${num1} ${operator}`;
