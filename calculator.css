@@ -2,19 +2,17 @@
 
 /* Target is to reproduce the iOS layout */
 main {
-  padding: 10px;
-  border: red solid 2px;
+  color: #efefef;
 }
 input[value="AC"] {
   grid-area: AC;
+  font-size: 25px;
 }
 input#negate {
   grid-area: negate;
-  background-color: red;
 }
 input[value="%"] {
   grid-area: percent;
-  background-color: red;
 }
 input[value="9"] {
   grid-area: 9;
@@ -77,7 +75,7 @@ input {
 .function {
   grid-area: function;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .numbers {
   grid-area: numbers;
@@ -87,9 +85,11 @@ input {
 }
 
 .numbers input {
-  background-color: green;
-  width: 30%;
-  margin-bottom: 5px;
+  background-color: #333333;
+  color: #efefef;
+  margin-bottom: 8px;
+  padding: 0px;
+  border: 0px;
 }
 
 .numbers input[value="0"] {
@@ -99,13 +99,16 @@ input {
   grid-area: calc;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .calculator {
-  border: 2px blue dashed;
+  background-color: #0e0e0e;
   height: 500px;
-  width: 60%;
+  padding: 10px;
+  border-radius: 5px;
+  width: 40%;
   margin: 20px auto;
 
   display: grid;
@@ -120,4 +123,35 @@ input {
     "numbers  numbers  numbers  calc"
     "numbers  numbers  numbers  calc"
     "numbers  numbers  numbers  calc";
+}
+
+/* iOS Themeing */
+
+/* TODO: Need to lighten this font */
+.history,
+.input {
+  font-size: 60px;
+}
+
+.function input {
+  color: #0e0e0e;
+  background-color: #e5e5e5;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+input {
+  width: 30%;
+  border: 0px;
+  border-radius: 55px;
+  font-size: 30px;
+}
+.calc input {
+  width: 58px;
+  height: 55px;
+  border-radius: 60px;
+  background-color: #f09c16;
+  color: #efefef;
+  text-align: center;
+  font-weight: bold;
 }
