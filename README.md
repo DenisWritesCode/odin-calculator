@@ -17,11 +17,11 @@
 
 ## Denis' Journey
 
-- [ ] Fine-tune.
-- [ ] Style Layout.
-- [ ] Tie JS with HTML.
-- [ ] Make buttons populate display input field.
-- [ ] Add HTML with Basic buttons (Copy Apple Layout).
+- [x] Fine-tune.
+- [x] Style Layout.
+- [x] Tie JS with HTML.
+- [x] Make buttons populate display input field.
+- [x] Add HTML with Basic buttons (Copy Apple Layout).
 - [x] Function `operate()` that only takes 2 numbers and then calls the
       appropriate operator function.
 - [x] JS for 4 arithmetic operations.
